@@ -1,22 +1,17 @@
-// context/OrgContext.js
+"use client";
 import { createContext, useContext, useState } from "react";
+import { getDummyData } from "@/data/dummyData";
 
 const BotContext = createContext();
 
 export function BotProvider({ children }) {
-  const [organisation, setOrganisation] = useState({
-    companyName: "",
-    websiteURL: "",
-    companyDescription: "",
-    metaDescription: "",
-    webpages: dummyData,
-  });
+  const [organisation, setOrganisation] = useState(null);
 
   const setOrgDetails = (details) => {
-    setOrganisation((prev) => ({
-      ...prev,
+    setOrganisation({
       ...details,
-    }));
+      webpages: getDummyData(details.websiteURL),
+    });
   };
 
   return (
