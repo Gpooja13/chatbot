@@ -5,7 +5,7 @@ This is a Next.js project designed to integrate a chatbot into a website. The ap
 ## Live Demo
 
 You can view the live project at the following link:  
-[Chatbot Integration Live Demo](https://chatbot-dwtltwb4c-gpooja13s-projects.vercel.app/)
+[Chatbot Integration Live Demo](https://chatbot-7ufa1svx5-gpooja13s-projects.vercel.app/)
 
 ## Features
 
