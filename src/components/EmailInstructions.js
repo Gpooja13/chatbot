@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext"; // Import useAuth hook
+import { useAuth } from "../context/AuthContext";
+import { Button } from "../components/ui/button";
 
 export default function EmailInstructions() {
   const [isSending, setIsSending] = useState(false);
@@ -66,13 +67,13 @@ export default function EmailInstructions() {
   return (
     <div>
       {!emailSent ? (
-        <button
+        <Button
           onClick={handleSendEmail}
-          className="px-6 py-3 bg-green-500 text-white rounded-md"
+          className="px-10 py-3 w-full"
           disabled={isSending}
         >
           {isSending ? "Sending..." : "Send Instructions to Developer"}
-        </button>
+        </Button>
       ) : (
         <p className="text-green-600">Instructions have been sent to your email!</p>
       )}

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { Button } from "../components/ui/button";
 
 const SuccessUI = () => {
   const [showConfetti, setShowConfetti] = useState(true);
 
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white p-6 rounded-md shadow-lg w-full max-w-md">
+    <div className="flex flex-col items-center justify-center bg-white p-6 w-full max-w-md">
       {showConfetti && (
         <Confetti 
           width={window.innerWidth} 
@@ -23,23 +24,23 @@ const SuccessUI = () => {
 
       {/* Buttons */}
       <div className="flex flex-col gap-4 w-full">
-        <button className="px-6 py-3 bg-green-500 text-white rounded-md w-full">
+        <Button className="px-6 py-3 w-full">
           Explore Admin Panel
-        </button>
-        <button className="px-6 py-3 bg-blue-500 text-white rounded-md w-full">
+        </Button>
+        <Button className="px-6 py-3 w-full">
           Start talking to your chatbot
-        </button>
+        </Button>
       </div>
 
       {/* Social Media Sharing */}
       <div className="flex space-x-4 mt-6">
-        <a href="#" className="text-blue-500">
+        <a href="#" >
           <FaFacebook size={24} />
         </a>
-        <a href="#" className="text-blue-400">
+        <a href="#" >
           <FaTwitter size={24} />
         </a>
-        <a href="#" className="text-blue-700">
+        <a href="#" >
           <FaLinkedin size={24} />
         </a>
       </div>

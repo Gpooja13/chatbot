@@ -3,9 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
-import { Label } from "../components/ui/label";
+import Dashboard from "@/components/dashboard";
 
 export default function Home() {
   const { user, logout } = useAuth();
@@ -111,13 +109,7 @@ export default function Home() {
                         href="#"
                         className="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                       >
-                        Features
-                      </Link>
-                      <Link
-                        href="#"
-                        className="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                      >
-                        Company
+                        {user.displayName || user.email}
                       </Link>
                     </div>
                     <div className="py-6">
@@ -133,7 +125,7 @@ export default function Home() {
               </div>
             )}
           </header>
-         
+          <Dashboard />
         </div>
       ) : (
         <div className="bg-white w-full">

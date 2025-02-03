@@ -124,12 +124,12 @@ export default function LoginPage() {
 
         <p className="mt-8 text-center text-sm text-gray-500">
           Don't have an account?{" "}
-          <a
+          <Link
             href="/signup"
             className="font-semibold bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:bg-gradient-to-l hover:from-pink-500 hover:via-purple-500 hover:to-indigo-600"
           >
             Sign In
-          </a>
+          </Link>
         </p>
       </div>
     </div>

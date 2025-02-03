@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea"
 
 const WebsiteForm = ({ onSubmit }) => {
   const [companyName, setCompanyName] = useState("");
@@ -36,7 +37,7 @@ const WebsiteForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div className="isolate bg-white px-6 py-10 sm:py-10 lg:px-8 ">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -50,16 +51,16 @@ const WebsiteForm = ({ onSubmit }) => {
 
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-          Contact sales
+          Train Bot 
         </h2>
         <p className="mt-2 text-lg/8 text-gray-600">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
+        Integrate your data sources to enhance your chatbot’s training.
         </p>
       </div>
       <form
         onSubmit={handleSubmit}
         method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20"
+        className="mx-auto mt-6 max-w-xl sm:mt-10"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div className="sm:col-span-2">
@@ -74,7 +75,8 @@ const WebsiteForm = ({ onSubmit }) => {
                 onChange={(e) => setCompanyName(e.target.value)}
                 required
                 placeholder="Name of Organisation"
-                autocomplete="organization"
+                className="placeholder:text-gray-400"
+                autoComplete="organization"
               />
             </div>
           </div>
@@ -93,7 +95,8 @@ const WebsiteForm = ({ onSubmit }) => {
                 }}
                 required
                 placeholder="www.example.com"
-                autocomplete="email"
+                className="placeholder:text-gray-400"
+                autoComplete="email"
               />
             </div>
           </div>
@@ -103,21 +106,21 @@ const WebsiteForm = ({ onSubmit }) => {
               Description
             </Label>
             <div className="mt-2.5">
-              <textarea
+              <Textarea
                 name="description"
                 id="description"
                 rows="4"
                 value={companyDescription}
                 onChange={(e) => setCompanyDescription(e.target.value)}
                 placeholder="Meta description will be auto-filled, but you can edit it"
-                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              ></textarea>
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2"
+              ></Textarea>
             </div>
           </div>
         </div>
         <div className="mt-10">
           <Button type="submit" className="block w-full rounded-md text-center text-sm shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 ">
-            Let's talk
+            Fetch Links
           </Button>
         </div>
       </form>
