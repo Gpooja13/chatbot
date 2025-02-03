@@ -1,6 +1,6 @@
 "use client";
 import { useAuth } from "@/context/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EmailInstructions from "../../components/EmailInstructions";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,13 @@ export default function ChatbotIntegrationStep() {
   const { user, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
+
+  useEffect(()=>{
+    if (!user) {
+      router.push('/login'); 
+     
+    }
+  },[])
 
   return (
     <div className="bg-white w-full">
@@ -56,7 +63,7 @@ export default function ChatbotIntegrationStep() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <p className="mr-4 pr-4 border-r border-gray-300 text-sm ">
-              Welcome, {user.displayName || user.email} !
+              Welcome, {user?.displayName || user?.email} !
             </p>
             <button
               onClick={logout}

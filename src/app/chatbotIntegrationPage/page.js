@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import SuccessUI from "../../components/SuccessUI";
 import FailureUI from "../../components/FailureUI";
 import { useAuth } from "../../context/AuthContext"; 
@@ -29,6 +29,13 @@ export default function ChatbotIntegrationPage() {
       setIsSuccess(false); // In case of error
     }
   };
+
+  useEffect(()=>{
+      if (!user) {
+        router.push('/login'); 
+       
+      }
+    },[])
 
   return (
     <div className="bg-white w-full">
@@ -74,7 +81,7 @@ export default function ChatbotIntegrationPage() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <p className="mr-4 pr-4 border-r border-gray-300 text-sm ">
-              Welcome, {user.displayName || user.email} !
+              Welcome, {user?.displayName || user?.email} !
             </p>
             <button
               onClick={logout}

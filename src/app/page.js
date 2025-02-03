@@ -55,7 +55,7 @@ export default function Home() {
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                 <p className="mr-4 pr-4 border-r border-gray-300 text-sm ">
-                  Welcome, {user.displayName || user.email} !
+                  Welcome, {user?.displayName || user?.email} !
                 </p>
                 <button
                   onClick={logout}
@@ -217,17 +217,12 @@ export default function Home() {
                 <div className="mt-6 flow-root">
                   <div className="-my-6 divide-y divide-gray-500/10">
                     <div className="space-y-2 py-6">
+                      
                       <Link
                         href="#"
                         className="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                       >
-                        Features
-                      </Link>
-                      <Link
-                        href="#"
-                        className="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                      >
-                        Company
+                        {user?.displayName || user?.email}
                       </Link>
                     </div>
                     <div className="py-6">

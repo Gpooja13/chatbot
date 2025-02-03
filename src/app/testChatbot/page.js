@@ -1,10 +1,20 @@
 "use client";
+import { useState,useEffect } from "react";
 import Chatbot from "../../components/Chatbot";
 import Topbar from "../../components/Topbar";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../../context/AuthContext";
 
 export default function TestChatbot() {
   const router = useRouter();
+  const { user, logout } = useAuth();
+
+  useEffect(()=>{
+      if (!user) {
+        router.push('/login'); 
+        
+      }
+    },[])
   return (
     <>
       <Topbar />
